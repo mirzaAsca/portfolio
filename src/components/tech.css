@@ -1,0 +1,114 @@
+#tech-section {
+  margin-top: 200px; /* Adjust the value to your preference */
+}
+
+.tech_used {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+  width: 800px;
+  padding: 10px;
+}
+
+.tech_used img {
+  object-fit: cover;
+}
+
+figure {
+  border-radius: 10px;
+}
+
+.tech_used .scrolling {
+  display: flex;
+  animation: moving 15s linear infinite;
+}
+
+.tech_used .scrolling2 {
+  display: flex;
+  animation: moving 20s linear infinite reverse;
+}
+
+.tech_used .scrolling:hover {
+  animation-play-state: paused;
+}
+
+.tech_used .scrolling:hover img {
+  cursor: pointer;
+}
+
+@keyframes moving {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.tech_used img:hover {
+  cursor: pointer;
+  animation-play-state: paused;
+}
+
+/* Added and adjusted styling for the effects */
+
+.tech_used .scrolling .card {
+  margin: 0;
+  width: auto;
+  height: auto;
+  box-shadow: none;
+  transform: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tech_used .scrolling .card {
+  position: relative;
+  margin: 20px;
+  padding: 10px;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.271);
+  transform-origin: center top;
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  transition: 0.3s;
+}
+
+.tech_used .scrolling .card img {
+  width: 100%;
+  min-height: 100%;
+}
+
+.tech_used .scrolling .card:hover {
+  box-shadow: 0 8px 16px 3px rgba(255, 255, 255, 0.277);
+  transform: translateY(-30px) scale(1.05) rotateX(15deg);
+}
+
+.tech_used .scrolling .card:after {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  width: 200%;
+  height: 100%;
+  top: -90%;
+  left: -10px;
+  opacity: 0.2;
+  transform: rotate(45deg);
+  background: linear-gradient(
+    to top,
+    transparent,
+    #fff 25%,
+    rgba(255, 255, 255, 0.5)
+  );
+  transition: 0.2s;
+}
+
+.tech_used .scrolling .card:hover:after {
+  transform: rotate(25deg);
+  top: -40%;
+  opacity: 0.15;
+}

@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
+
+
+.loading_about{
+    margin-top: 45%;
+    text-align: center;
+    color: #fff;
+    font-family: Barlow Condensed, Tahoma , Arial;
+}
+span{
+    color: #fb8a8a;
+}
+ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+ul li{
+    list-style: none;
+    color: #484848;
+    font-size: 5em;
+    letter-spacing: 15px;
+    font-family: Barlow, sans-serif;
+    animation: animate 1.4s linear infinite;
+}
+@keyframes animate
+{
+    0%
+    {
+        color: #484848;
+        text-shadow: none;
+    }
+     90%
+    {
+        color: #484848;
+        text-shadow: none;
+    }
+    100%
+    {
+        color: #fb8a8a;
+        text-shadow: 0 0 7px #fb8a8a , 0 0 50px #ff6c00;
+    }
+}
+ul li:nth-child(1)
+{
+    animation-delay: .2s;
+}
+ul li:nth-child(2)
+{
+    animation-delay: .4s;
+}
+ul li:nth-child(3)
+{
+    animation-delay: .6s;
+}
+ul li:nth-child(4)
+{
+    animation-delay: .8s;
+}
+ul li:nth-child(5)
+{
+    animation-delay: 1s;
+}
+ul li:nth-child(6)
+{
+    animation-delay: 1.2s;
+}
+ul li:nth-child(7)
+{
+    animation-delay: 1.4s;
+}
+

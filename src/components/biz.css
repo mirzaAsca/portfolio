@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+#biz-section {
+  position: relative;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 30px auto; /* Add 'auto' for left and right margins */
+  width: 80vw; /* Adjust the width to your preference */
+  margin-bottom: -10px;
+  position: relative;
+  
+}
+
+.panel {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70vh;
+  color: #fff;
+
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+  -webkit-transition: all 700ms ease-in;
+  border: 3px solid #ff9d8776;
+  position: relative;
+}
+
+.panel.active {
+  flex: 5;
+  border-radius: 10px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
+
+/* ...other styles... */
+
+.vertical-text {
+  font-size: 40px;
+  position: absolute;
+  color: rgba(255, 255, 255, 0.519);
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  left: 0;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out,
+    left 0.3s ease-in-out, opacity 0.3s ease-in-out, scale 0.3s ease-in-out;
+  transform-origin: top left;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.1s ease-in-out;
+  top: 0;
+  left: 90;
+  transform: rotate(-90deg);
+  transition: transform 0.9s ease-in-out, top 0.9s ease-in-out,
+    left 0.3s ease-in-out;
+}
+
+.panel:not(.active) .vertical-text {
+  opacity: 1;
+  top: 450px;
+}
+
+.panel.active .vertical-text {
+  top: 20px;
+  left: 30px;
+  transform: rotate(45deg);
+  opacity: 1;
+  transform: rotate(0deg) scale(1.2); /* Add scale effect */
+}
+
+.additional-text {
+  font-size: 15px;
+  position: absolute;
+  color: white;
+  padding: 30px;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  left: 30px;
+  top: 90px;
+  transition: opacity 0.3s ease-in-out;
+  font-family: "Barlow", sans-serif;
+  word-wrap: break-word;
+  max-width: calc(100% - 60px);
+}
+
+.panel:not(.active) .additional-text {
+  display: none;
+}
+
+.panel.active .additional-text {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out 1s;
+}
+
+.panel:hover .vertical-text {
+  color: white;
+  cursor: pointer;
+}
+
+.panel:hover {
+  border-color: #fb8a8a;
+}
+
+.biz-button {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.panel:not(.active) .additional-text {
+  display: none;
+}

@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+
+a,
+i,
+input,
+body {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 0;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+h1:focus,
+h2:focus,
+h3:focus,
+h4:focus,
+h5:focus,
+h6:focus,
+p:focus,
+ul:focus,
+li:focus,
+button:focus,
+a:focus,
+i:focus,
+input:focus,
+body:focus {
+  outline: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  font-family: "Barlow", sans-serif;
+  background: #000000;
+}
+html {
+  font-family: "Barlow", sans-serif;
+}
+
+.mirza {
+  color: #ffffff; /* white color */
+}
+.asceric {
+  color: #fb8a8a; /* orange color */
+}
+
+#about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  color: white; /* This sets the text color to white */
+}
+
+.centered-content {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 60%; /* Set a maximum width if desired */
+  margin: auto; /* This will center the div */
+}
+
+.blurred {
+  background-color: rgba(51, 51, 51, 0.7);
+  backdrop-filter: blur(80%);
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.icon.bulb {
+  left: -50px;
+}
+
+.icon.coding {
+  float: right;
+  margin-left: 10px;
+}
+
+.icon.animate-coding {
+  animation: move-coding 1s ease 4s forwards;
+}
+
+.icon.animate-bulb {
+  animation: move-bulb 1s ease 4s forwards;
+}
+
+@keyframes move-coding {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes move-bulb {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.App {
+  height: 100%;
+  width: 100%;
+}
