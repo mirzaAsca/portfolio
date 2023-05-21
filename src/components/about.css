@@ -1,4 +1,24 @@
-.more-button {
+#about-section {
   display: block;
-  margin-top: 10px;
+  text-align: center;
+  min-height: 100vh;
+  color: white; /* This sets the text color to white */
+  padding: 80px 90px 0; /* This will add 20px padding at the top and 40px padding at the sides */
+
+}
+
+#about-section::before {
+  content: '';
+  height: 100%;
+  float: left;
+  visibility: hidden;
+}
+
+.centered-content {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+
+  max-width: 60%; /* Set a maximum width if desired */
+  /* margin: auto; This is not necessary */
 }

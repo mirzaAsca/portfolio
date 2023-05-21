@@ -206,11 +206,12 @@ const Projects = () => {
           </div>
         </div>
       </div>
+      <div className="check-button">
       <ScrollButton
         className="more-button"
         buttonText="Check The Tech I Used ⬇"
         sectionId="tech-section"
-      />
+      /></div>
     </section>
   );
 };

@@ -1,4 +1,11 @@
 
+.mirza {
+  color: #ffffff; /* white color */
+}
+.asceric {
+  color: #fb8a8a; /* orange color */
+}
+
 .logo {
     position: fixed;
     z-index: 5;

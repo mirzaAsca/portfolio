@@ -1,5 +1,4 @@
 import React from "react";
-import "../style.css";
 import "./tech.css";
 import ScrollButton from "./ScrollButton";
 
@@ -36,7 +35,7 @@ const Tech = () => {
 
   return (
     <section id="tech-section">
-      <div>
+      <div className="centered-container">
         <div className="text centered-content" id="about-section">
           <p>CODING TECH</p>
           <div className="tech_used">
@@ -65,10 +64,10 @@ const Tech = () => {
             </div>
           </div>
           <ScrollButton
-        className="more-button"
-        buttonText="See my other experience ⬇"
-        sectionId="biz-section"
-      />
+            className="more-button"
+            buttonText="See my other experience ⬇"
+            sectionId="biz-section"
+          />
         </div>
       </div>
     </section>

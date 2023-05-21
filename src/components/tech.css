@@ -1,5 +1,5 @@
 #tech-section {
-  margin-top: 200px; /* Adjust the value to your preference */
+  margin-top: 15%; /* Adjust the value to your preference */
 }
 
 .tech_used {
@@ -8,7 +8,7 @@
   position: relative;
   height: 200px;
   width: 800px;
-  padding: 10px;
+  padding-top: 20px;
 }
 
 .tech_used img {
@@ -111,4 +111,13 @@ figure {
   transform: rotate(25deg);
   top: -40%;
   opacity: 0.15;
+}
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* This might be necessary depending on your layout */
+  align-items: center;
+
 }

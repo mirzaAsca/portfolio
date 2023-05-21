@@ -1,31 +1,49 @@
 @import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
 
+.loading-root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #ffffff00;
+}
 
-.loading_about{
-    margin-top: 45%;
+.loading_about {
     text-align: center;
     color: #fff;
     font-family: Barlow Condensed, Tahoma , Arial;
+    margin-top: 2rem;
 }
-span{
+span {
     color: #fb8a8a;
 }
-ul{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+ul {
+    position: relative;
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
-ul li{
+ul li {
     list-style: none;
     color: #484848;
     font-size: 5em;
     letter-spacing: 15px;
     font-family: Barlow, sans-serif;
     animation: animate 1.4s linear infinite;
+}
+
+/* Responsive styles */
+
+@media (max-width: 768px) {
+    ul li {
+        font-size: 3em;
+    }
+    .loading_about {
+        font-size: 0.8rem;
+    }
 }
 @keyframes animate
 {

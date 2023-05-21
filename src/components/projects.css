@@ -1,5 +1,35 @@
 @import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
-
+#projects-section .cards-wrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: stretch;
+	padding-top: 10%;
+  }
+  
+  #projects-section .card-wrapper {
+	flex: 0 0 auto;
+	width: 400px; /* Adjust according to your needs */
+	height: 400px; /* Adjust according to your needs */
+	box-sizing: border-box;
+	margin: 0.5em;
+  }
+  
+  @media (max-width: 768px) {
+	#projects-section .cards-wrapper {
+	  flex-direction: column;
+	  align-items: center;
+	}
+  
+	#projects-section .card-wrapper {
+	  flex: 0 0 auto;
+	  width: 400px; /* Adjust according to your needs */
+	  height: 400px; /* Adjust according to your needs */
+	}
+  }
+  
+  
  .cards-wrapper {
 	 position: relative;
 	 height: 100%;
@@ -278,9 +308,10 @@
 	 justify-content: space-between;
 	 align-items: center;
 	 width: 80%;
-	 padding: 8% 0 0;
-	 margin: 50% 0 0;
+	 padding: 10px 0 0;
+	 margin: 10% 0 0;
 	 border-top: 1px solid #e0e0e0;
+	 
 	 
 	 
 }
@@ -348,4 +379,13 @@
 		 transform-origin: 50% 0%;
 	}
 }
+
+img {
+	max-width: 100%;
+	height: auto
+	;}
  
+	.check-button {
+		margin-top: -5%; /* Adjust to your needs */
+	  }
+	  
