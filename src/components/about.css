@@ -3,8 +3,25 @@
   text-align: center;
   min-height: 100vh;
   color: white; /* This sets the text color to white */
-  padding: 80px 90px 0; /* This will add 20px padding at the top and 40px padding at the sides */
+  padding: 80px 80px 0; /* This will add 80px padding at the top and 80px padding at the sides for large screens */
+}
 
+@media (max-width: 1200px) {
+  #about-section {
+    padding: 80px 60px 0; /* Slightly smaller padding for medium screens */
+  }
+}
+
+@media (max-width: 800px) {
+  #about-section {
+    padding: 80px 40px 0; /* Even smaller padding for small screens */
+  }
+}
+
+@media (max-width: 500px) {
+  #about-section {
+    padding: 80px 20px 0; /* Smallest padding for mobile and very small screens */
+  }
 }
 
 #about-section::before {
@@ -12,13 +29,4 @@
   height: 100%;
   float: left;
   visibility: hidden;
-}
-
-.centered-content {
-  display: inline-block;
-  text-align: left;
-  vertical-align: middle;
-
-  max-width: 60%; /* Set a maximum width if desired */
-  /* margin: auto; This is not necessary */
 }

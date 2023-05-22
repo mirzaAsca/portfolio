@@ -16,7 +16,6 @@
   width: 80vw; /* Adjust the width to your preference */
   margin-bottom: -10px;
   position: relative;
-  
 }
 
 .panel {
@@ -105,7 +104,7 @@
 
 .panel.active .additional-text {
   opacity: 1;
-  transition: opacity 0.3s ease-in-out 1s;
+  transition: opacity 0.3s ease-in-out 4s;
 }
 
 .panel:hover .vertical-text {

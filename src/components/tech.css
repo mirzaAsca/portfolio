@@ -22,6 +22,8 @@ figure {
 .tech_used .scrolling {
   display: flex;
   animation: moving 15s linear infinite;
+  
+  
 }
 
 .tech_used .scrolling2 {
@@ -120,4 +122,32 @@ figure {
   height: 100%; /* This might be necessary depending on your layout */
   align-items: center;
 
+}
+
+@media only screen and (max-width: 900px) {
+  .tech_used {
+    height: 20  0px;
+    width: 500px;
+    padding-top: 10px;
+    margin: auto;
+  }
+  
+  .tech_used .scrolling .card, .tech_used .scrolling2 .card {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .tech_used {
+    height: 20  0px;
+    width: 300px;
+    padding-top: 10px;
+    margin: auto;
+  }
+  
+  .tech_used .scrolling .card, .tech_used .scrolling2 .card {
+    width: 100px;
+    height: 100px;
+  }
 }
