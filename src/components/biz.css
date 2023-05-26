@@ -22,7 +22,7 @@
   background-size: auto 100%;
   background-position: center;
   background-repeat: no-repeat;
-  height: 70vh;
+  height: 60vh;
   color: #fff;
 
   flex: 0.5;
@@ -37,61 +37,47 @@
 .panel.active {
   flex: 5;
   border-radius: 10px;
-}
-
-@media (max-width: 480px) {
-  .container {
-    width: 100vw;
-  }
-
-  .panel:nth-of-type(4),
-  .panel:nth-of-type(5) {
-    display: none;
-  }
+  height: 70vh;
 }
 
 /* ...other styles... */
 
 .vertical-text {
-  font-size: 40px;
+  font-size: 3vw;
+  
   position: absolute;
   color: rgba(255, 255, 255, 0.519);
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  left: 0;
-  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out,
-    left 0.3s ease-in-out, opacity 0.3s ease-in-out, scale 0.3s ease-in-out;
-  transform-origin: top left;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
   opacity: 0;
   white-space: nowrap;
-  transition: opacity 0.1s ease-in-out;
-  top: 0;
-  left: 90;
-  transform: rotate(-90deg);
   transition: transform 0.9s ease-in-out, top 0.9s ease-in-out,
-    left 0.3s ease-in-out;
+    left 0.3s ease-in-out, opacity 0.3s ease-in-out, scale 0.3s ease-in-out;
+  transform-origin: center;
 }
 
 .panel:not(.active) .vertical-text {
   opacity: 1;
-  top: 450px;
 }
 
 .panel.active .vertical-text {
   top: 20px;
-  left: 30px;
+  left: 70px;
   transform: rotate(45deg);
   opacity: 1;
   transform: rotate(0deg) scale(1.2); /* Add scale effect */
 }
 
 .additional-text {
-  font-size: 15px;
+  font-size: 16px;
   position: absolute;
   color: white;
   padding: 30px;
-  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   left: 30px;
   top: 90px;
+  opacity: 0;
   transition: opacity 0.3s ease-in-out;
   font-family: "Barlow", sans-serif;
   word-wrap: break-word;
@@ -99,12 +85,12 @@
 }
 
 .panel:not(.active) .additional-text {
-  display: none;
+  font-size: 1px;
 }
 
 .panel.active .additional-text {
   opacity: 1;
-  transition: opacity 0.3s ease-in-out 4s;
+  transition: opacity 0.3s ease-in-out 0.7s;
 }
 
 .panel:hover .vertical-text {
@@ -123,6 +109,154 @@
   text-align: center;
 }
 
-.panel:not(.active) .additional-text {
-  display: none;
+@media (max-width: 1200px) {
+  .vertical-text {
+  }
+}
+
+@media (max-width: 835px) {
+  .additional-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 992px) {
+  .vertical-text {
+    font-size: 26px;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 30px auto;
+    width: 95vw;
+    margin-bottom: -10px;
+    position: relative;
+  }
+}
+
+@media (max-width: 792px) {
+ 
+  .vertical-text {
+    font-size: 26px;
+  }
+  .panel.active .vertical-text {
+    left: 50px;
+  }
+
+  .additional-text {
+    font-size: 16px;
+    left: 30px;
+    top: 60px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 660px) {
+  
+  #biz-section {
+    min-height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* If you want to stack the content vertically. */
+  }
+  .additional-text {
+    font-size: 16 px;
+    top: 60px;
+    padding: 50px 0px 0px;
+    max-width: 100%;
+  }
+
+  .panel {
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 40vh;
+    width: auto;
+    color: #fff;
+    flex: 0.5;
+    margin: 3px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+    -webkit-transition: all 700ms ease-in;
+    border: 3px solid #ff9d8776;
+    position: relative;
+  }
+
+  .panel.active {
+    position: relative;
+    height: 60vh; /* set height of active panel */
+    padding: 150px;
+  }
+  .panel:not(.active) {
+    border: 1px solid #ff9d8776;
+  }
+
+  .rotated-container {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* set width based on parent container */
+    height: 100%; /* set height based on parent container */
+    transform: rotate(90deg);
+    min-width: 70vh;
+    max-width: 100vh;
+    height: 100vh;
+    max-width: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  }
+
+  .rotated-container::-webkit-scrollbar {
+    width: 0px; /* For Chrome, Safari, and Opera */
+  }
+
+  .panel.active .vertical-text {
+    transform: rotate(-90deg);
+    top: 50%;
+    left: 5%;
+    transform: translateX(-50%) rotate(-90deg);
+    text-align: left;
+  }
+
+  .panel.active .additional-text {
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    left: 55px;
+    display: flex;
+    left: -1%;
+    text-align: left;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .rotated-container .additional-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(-90deg);
+    transform-origin: center;
+  }
+  .container-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw; /* Adjust the width to your preference */
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* set width based on parent container */
+    height: 100%; /* set height based on parent container */
+  }
 }
