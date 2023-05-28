@@ -28,8 +28,6 @@ const Projects = () => {
   };
 
   const flipCard = (event) => {
-    event.preventDefault();
-
     const $btnFace = event.target.closest(".face");
     const $card = $btnFace.parentElement;
 
@@ -81,14 +79,9 @@ const Projects = () => {
                     </li>
                     <li className="info-content-item">
                       Github{" "}
-                      <span
-                        onClick={() =>
-                          (window.location.href =
-                            "https://github.com/mirzaAsca/country")
-                        }
-                      >
+                      <span>
                         <a
-                          href="https://github.com/mirzaAsca/country"
+                          href="https://github.com/mirzaAsca/yupoo-to-shopify-CSV-method"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -129,14 +122,9 @@ const Projects = () => {
                     </li>
                     <li className="info-content-item">
                       Github{" "}
-                      <span
-                        onClick={() =>
-                          (window.location.href =
-                            "https://github.com/mirzaAsca/country")
-                        }
-                      >
+                      <span>
                         <a
-                          href="https://github.com/mirzaAsca/country"
+                          href="https://github.com/mirzaAsca/portfolio"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -179,12 +167,7 @@ const Projects = () => {
                     </li>
                     <li className="info-content-item">
                       Github{" "}
-                      <span
-                        onClick={() =>
-                          (window.location.href =
-                            "https://github.com/mirzaAsca/country")
-                        }
-                      >
+                      <span>
                         <a
                           href="https://github.com/mirzaAsca/country"
                           target="_blank"
@@ -207,11 +190,12 @@ const Projects = () => {
         </div>
       </div>
       <div className="check-button">
-      <ScrollButton
-        className="more-button"
-        buttonText="Check The Tech I Used ⬇"
-        sectionId="tech-section"
-      /></div>
+        <ScrollButton
+          className="more-button"
+          buttonText="Check The Tech I Used ⬇"
+          sectionId="tech-section"
+        />
+      </div>
     </section>
   );
 };

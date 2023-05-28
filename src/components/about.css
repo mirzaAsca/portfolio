@@ -30,3 +30,8 @@
   float: left;
   visibility: hidden;
 }
+
+.contact-link {
+  color: #fb8a8a  ;
+  font-weight: bold;
+}

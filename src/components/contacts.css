@@ -1,37 +1,95 @@
-@import 'https://fonts.googleapis.com/css?family=Sintony';
+@import "https://fonts.googleapis.com/css?family=Sintony";
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .section {
-text-align: center;
-position: absolute;
-width: 100%;
-height: 90vh;
-letter-spacing: 4px;
-overflow: hidden;
-clip: rect(0, auto, auto, 0);
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 90vh;
+  letter-spacing: 4px;
+  overflow: hidden;
+  clip: rect(0, auto, auto, 0);
 }
 
 .section .fixed {
-overflow: hidden;
-position: fixed;
-top: 50%;
-left: 50%;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding-top: 20%;
+  transform: translate(-50%, -50%);
 }
 
 .section:nth-child(1) {
-background-color: #fb8a8a;
-color: #000;
-top: 0;
-z-index: 1;
-}
-
-.section:nth-child(1) .fixed {
-transform: translate(-50%, -50%);
+  background-color: #fb8a8a;
+  color: #000;
+  top: 0;
+  z-index: 1;
 }
 
 .parallax-wrapper {
-position: relative;
+  position: relative;
 }
+
+.image-container {
+  flex-wrap: wrap;
+  justify-content: center;
+  display: flex;
+  width: 90%;
+  margin: 55px auto;
+}
+
+.image-link {
+  position: relative;
+  display: inline-block;
+  width: 30px; /* Set a fixed width for the images */
+  margin: 60px;
+  padding-top: 10%;
+}
+
+.image-link img {
+  width: 100%;
+  height: auto; /* Allow the height to adjust proportionally */
+  transition: transform 0.3s ease;
+}
+
+.image-link:hover img {
+  transform: scale(1.4);
+}
+
+@media (max-width: 1000px) {
+  .image-link {
+    margin: 40px;
+  }
+}
+
+@media (max-width: 784px) {
+  .image-link {
+    margin: 40px;
+  }
+}
+
+@media (max-width: 784px) {
+  .image-link {
+    width: 20px;
+    margin: 25px;
+  }
+}
+
+
+@media (max-width: 484px) {
+    .image-link {
+      width: 20px;
+      margin: 15px;
+    }
+  }
+
+  @media (max-width: 350px) {
+    .image-link {
+      width: 20px;
+      margin: 5px;
+    }
+  }
