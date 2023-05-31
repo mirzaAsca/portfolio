@@ -44,7 +44,7 @@
 
 .vertical-text {
   font-size: 2.5vw;
-  
+
   position: absolute;
   color: rgba(255, 255, 255, 0.519);
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -102,18 +102,62 @@
   border-color: #fb8a8a;
 }
 .linked {
-  color: #fb8a8a  ;
+  color: #fb8a8a;
   font-weight: bold;
 }
 
 .biz-button {
   position: absolute;
+  overflow: auto;
   bottom: 30px;
   width: 100%;
   text-align: center;
 }
 
+.image-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
 
+.image {
+  
+
+  position: relative;
+  max-height: 120px;
+  transition: all 0.3s ease-in-out;
+  border: 3px solid #fb8a8a; /* Add this line to your existing code */
+  cursor: pointer;
+}
+
+.image.active {
+  transform: scale(3) translateY(-35%) translateX(-10%);
+  z-index: 100;
+  transition: all 0.9s ease-in-out;
+  border: 1px solid #fb8a8a; /* Add this line to your existing code */
+}
+
+.invisible {
+  visibility: hidden;
+}
+  
+
+
+.panel:not(.active) .image-container {
+  display: none;
+}
+
+.image:hover {
+  filter: brightness(130%) saturate(110%);
+  transform: scale(3) translateY(-35%) translateX(-10%);
+  z-index: 100;
+  transition: all 0.9s ease-in-out; 
+  border: 1px solid #fb8a8a; /* Add this line to your existing code */
+}
 
 @media (max-width: 992px) {
   .vertical-text {
@@ -132,7 +176,6 @@
 }
 
 @media (max-width: 792px) {
- 
   .vertical-text {
     font-size: 26px;
   }
@@ -149,7 +192,6 @@
 }
 
 @media (max-width: 660px) {
-  
   #biz-section {
     min-height: 800px;
     display: flex;

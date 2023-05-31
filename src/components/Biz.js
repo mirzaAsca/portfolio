@@ -8,8 +8,22 @@ class Biz extends Component {
     super(props);
     this.state = {
       windowWidth: window.innerWidth,
+      isImageActive: [false, false], 
+      isImageVisible: [true, true], // add this line
     };
+    
   }
+  handlePhotoClick = () => {
+    this.setState({ isPhotoClicked: !this.state.isPhotoClicked });
+  };
+
+  handleImageClick = (index) => {
+    let newIsImageActive = [...this.state.isImageActive];
+    let newIsImageVisible = [...this.state.isImageVisible];
+    newIsImageActive[index] = !newIsImageActive[index];
+    newIsImageVisible[index] = true;
+    this.setState({ isImageActive: newIsImageActive, isImageVisible: newIsImageVisible });
+  };
 
   componentDidMount() {
     const panels = document.querySelectorAll(".panel");
@@ -22,6 +36,14 @@ class Biz extends Component {
     });
 
     window.addEventListener("resize", this.handleResize);
+    const images = document.querySelectorAll(".image");
+    images.forEach((image, index) => {
+      image.addEventListener("click", () => {
+        let newIsImageActive = [...this.state.isImageActive];
+        newIsImageActive[index] = !newIsImageActive[index];
+        this.setState({ isImageActive: newIsImageActive });
+      });
+    });
   }
 
   componentWillUnmount() {
@@ -37,6 +59,11 @@ class Biz extends Component {
     panels.forEach((panel) => {
       panel.classList.remove("active");
     });
+  
+    // Set all images to inactive and invisible after 3 seconds when a new panel is clicked
+    setTimeout(() => {
+      this.setState({ isImageActive: [false, false], isImageVisible: [false, false] });
+    }, 3000);
   }
 
   getContainerClass() {
@@ -49,7 +76,11 @@ class Biz extends Component {
       <section id="biz-section">
         <div className="container-wrapper">
           <div className={this.getContainerClass()}>
-            <div className="panel active ">
+            <div
+              className={`panel active ${
+                this.state.isPhotoClicked ? "clicked" : ""
+              }`}
+            >
               <h2 className="vertical-text">E-COMMERCE BIZ</h2>
               <div className="additional-text ">
                 <p className="text">
@@ -59,12 +90,42 @@ class Biz extends Component {
                   and used a plethora of Shopify apps, including tools for
                   automation like Zapier and IFTTT, as well as Instagram
                   auto-post apps. This hands-on experience has allowed me to
-                  fine-tune my technical skills, and deepen my understanding of
+                  fine-tune my technical skills and deepen my understanding of
                   eCommerce strategies and market trends. This side venture is
                   not just a business, but an ongoing commitment to learning,
                   testing, and adapting in the evolving world of eCommerce.
-                  Website: <span className="linked">collections-shop.com/</span>
+                  Website:{" "}
+                  <a
+                    href="https://collections-shop.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linked"
+                  >
+                    collections-shop.com/
+                  </a>
                 </p>
+              </div>
+              <div
+                className={`image-container ${
+                  this.state.isImageActive[0] ? "active" : ""
+                }`}
+              >
+                <img
+                  src="https://i.ibb.co/VqrM9Yr/logo-color.jpg"
+                  alt="Essence-01"
+                  className={`image unvisible ${
+                    this.state.isImageActive[0] ? "active" : ""
+                  }`}
+                  onClick={() => this.handleImageClick(0)}
+                />
+                <img
+                  src="https://i.ibb.co/kSqnfxc/logo.png"
+                  alt="Essence-02"
+                  className={`image unvisible ${
+                    this.state.isImageActive[1] ? "active" : ""
+                  }`}
+                  onClick={() => this.handleImageClick(1)}
+                />
               </div>
             </div>
             <div className="panel bg-image-2">
@@ -83,9 +144,25 @@ class Biz extends Component {
                   complex data structures, and implement concurrent programming
                   techniques in Python. For more details, you can find the full
                   documentation on my GitHub repository by clicking on this{" "}
-                  <span className="linked">link</span>. Additionally, you can
-                  watch a demo of the script in action in this{" "}
-                  <span className="linked">video</span>.
+                  <a
+                    href="https://github.com/mirzaAsca/yupoo-to-shopify-CSV-method"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linked"
+                  >
+                    link
+                  </a>
+                  . Additionally, you can watch a demo of the script in action
+                  in this{" "}
+                  <a
+                    href="https://www.youtube.com/watch?v=jWGo6DZl4ng&ab_channel=mirzaasca7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linked"
+                  >
+                    video
+                  </a>
+                  .
                 </p>
               </div>
             </div>
@@ -105,10 +182,40 @@ class Biz extends Component {
                   looking for quality relaxation and wellness services. This
                   project serves as a solid example of the impact of thoughtful,
                   hands-on branding in the business world. Instagram:{" "}
-                  <span className="linked">reina.sarajevo</span>
+                  <a
+                    href="https://www.instagram.com/reina.sarajevo/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linked"
+                  >
+                    reina.sarajevo
+                  </a>
                 </p>
               </div>
+              <div
+                className={`image-container ${
+                  this.state.isImageActive[0] ? "active" : ""
+                }`}
+              >
+                <img
+                  src="https://i.ibb.co/jW0Gnfq/Essence-01.jpg"
+                  alt="Essence-01"
+                  className={`image ${
+                    this.state.isImageActive[0] ? "active" : ""
+                  }`}
+                  onClick={() => this.handleImageClick(0)}
+                />
+                <img
+                  src="https://i.ibb.co/wQRHMVP/288679466-1184419679013127-5853861956908273841-n.jpg"
+                  alt="Essence-02"
+                  className={`image ${
+                    this.state.isImageActive[1] ? "active" : ""
+                  }`}
+                  onClick={() => this.handleImageClick(1)}
+                />
+              </div>
             </div>
+
             <div className="panel bg-image-4">
               <h2 className="vertical-text">LOGO REBRANDING</h2>
               <div className="additional-text ">
@@ -127,19 +234,50 @@ class Biz extends Component {
                   already there.
                 </p>
               </div>
+              <div
+                className={`image-container ${
+                  this.state.isImageActive[0] ? "active" : ""
+                }`}
+              >
+                <img
+                  src="https://i.ibb.co/0GBRVDP/30-05-2023-22-51-00-REC.png"
+                  alt="Essence-01"
+                  className={`image ${
+                    this.state.isImageActive[0] ? "active" : ""
+                  }`}
+                  onClick={() => this.handleImageClick(0)}
+                />
+                <img
+                  src="https://i.ibb.co/64T8hzr/JPG-Logo.jpg"
+                  alt="Essence-02"
+                  className={`image ${
+                    this.state.isImageActive[1] ? "active" : ""
+                  }`}
+                  onClick={() => this.handleImageClick(1)}
+                />
+              </div>
             </div>
             <div className="panel bg-image-5">
               <h2 className="vertical-text">VIDEO PROD</h2>
               <div className="additional-text ">
                 <p>
-                  I created a driving guide <span className="linked">video</span>, recording real traffic routes
-                  using a camera-mounted vehicle. Edited with Sony Vegas Pro,
-                  the footage was transformed into a clear and concise video.
-                  After rendering, I uploaded the final product to YouTube,
-                  where it has garnered over 50,000 views. This project is a
-                  testament to my ability in producing educational content that
-                  resonates with the intended audience – new drivers seeking
-                  practical learning materials.
+                  I created a driving guide{" "}
+                  <a
+                    href="https://www.youtube.com/watch?v=2Gam-53sMcE&ab_channel=senad.instruktor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linked"
+                  >
+                    video
+                  </a>
+                  , recording real traffic routes using a camera-mounted
+                  vehicle. Edited with Sony Vegas Pro, the footage was
+                  transformed into a clear and concise video. After rendering, I
+                  uploaded the final product to YouTube, where it has garnered
+                  over 50,000 views. This project is a testament to my ability
+                  in producing educational content that resonates with the
+                  intended audience – new drivers seeking practical learning
+                  materials.
                 </p>
               </div>
             </div>
