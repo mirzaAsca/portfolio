@@ -15,7 +15,7 @@ const Tech = () => {
   ];
 
   const imageUrls2 = [
-    "https://cloud7.news/wp-content/uploads/2020/12/GitHub-introduces-dark-mode-and-sponsors.jpg",
+    "https://i.postimg.cc/CMJKp810/8.jpg",
     "https://c.mql5.com/i/og/mql5-logo-fb-2.png",
     "https://digitalintheround.com/wp-content/uploads/2020/09/Shopify.jpg",
     "https://biglinden.com/wp-content/uploads/2022/12/WordPress-LOGO-LOGO-WORDPRESS-1024x901.webp",
